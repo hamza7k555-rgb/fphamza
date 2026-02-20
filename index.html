@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title> 🎉Facebook Tools Hamza🎉 </title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Tajawal', Arial, sans-serif;
+      background: linear-gradient(135deg, #121212, #1e1e2e);
+      color: #e0e0f0;
+      text-align: right;
+      direction: rtl;
+      padding: 20px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #ffffff;
+      font-size: 28px;
+    }
+
+    .header-box {
+      background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .header-box h2 {
+      font-size: 36px;
+      color: #ffffff;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .welcome-box {
+      background-color: #1e3a8a;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .welcome-box .verse {
+      font-size: 18px;
+      color: #00ff80;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .welcome-box .welcome-message {
+      font-size: 16px;
+      color: #e0e0f0;
+      margin-bottom: 10px;
+    }
+
+    .welcome-box .whatsapp {
+      font-size: 16px;
+      color: #40c4ff;
+    }
+
+    .nav-buttons {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-buttons .button-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    .nav-buttons button {
+      padding: 10px;
+      font-size: 14px;
+      background: linear-gradient(45deg, #0288d1, #4fc3f7);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Tajawal', sans-serif;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+      text-align: center;
+      min-width: 100px;
+      flex: 1;
+      white-space: nowrap;
+    }
+
+    .nav-buttons button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5);
+      background: linear-gradient(45deg, #4caf50, #81c784);
+    }
+
+    .nav-buttons button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(2, 136, 209, 0.3);
+    }
+
+    .nav-buttons button.active {
+      background: linear-gradient(45deg, #4caf50, #81c784);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5);
+    }
+
+    .nav-buttons button:disabled {
+      background: linear-gradient(45deg, #546e7a, #78909c);
+      cursor: not-allowed;
+    }
+
+    .section {
+      margin: 30px auto;
+      width: 100%;
+      max-width: none;
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      resize: vertical;
+      border: 2px solid #40c4ff;
+      border-radius: 8px;
+      background-color: #2a2a3a;
+      color: #40c4ff;
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+      margin-bottom: 15px;
+      font-family: 'Tajawal', sans-serif;
+      direction: rtl;
+      text-align: right;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+    }
+
+    textarea:focus, input[type="text"]:focus {
+      border-color: #81c784;
+      box-shadow: 0 0 8px rgba(64, 196, 255, 0.5);
+      outline: none;
+    }
+
+    textarea {
+      height: 200px;
+    }
+
+    input[type="text"] {
+      height: 40px;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #40c4ff;
+      border-radius: 8px;
+      background-color: #2a2a3a;
+      color: #40c4ff;
+      margin-bottom: 15px;
+      font-family: 'Tajawal', sans-serif;
+      direction: rtl;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      background: linear-gradient(45deg, #0288d1, #4fc3f7);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Tajawal', sans-serif;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+      position: relative;
+    }
+
+    button:hover:not(.nav-buttons button):not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5);
+      background: linear-gradient(45deg, #4caf50, #81c784);
+    }
+
+    button:hover:not(.nav-buttons button):not(:disabled)::after {
+      content: "🚀";
+      margin-right: 5px;
+    }
+
+    button:active:not(.nav-buttons button) {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(2, 136, 209, 0.3);
+    }
+
+    .download-btn {
+      background: linear-gradient(45deg, #ffb300, #ffd54f);
+    }
+
+    .download-btn:hover:not(:disabled) {
+      background: linear-gradient(45deg, #4caf50, #81c784);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5);
+    }
+
+    .download-btn:hover:not(:disabled)::after {
+      content: "💾";
+      margin-right: 5px;
+    }
+
+    .copy-btn {
+      background: linear-gradient(45deg, #0288d1, #4fc3f7);
+    }
+
+    .copy-btn:hover:not(:disabled) {
+      background: linear-gradient(45deg, #4caf50, #81c784);
+    }
+
+    .copy-btn:hover:not(:disabled)::after {
+      content: "📋";
+      margin-right: 5px;
+    }
+
+    #addPasswordBtn {
+      background: linear-gradient(45deg, #00acc1, #4dd0e1);
+    }
+
+    #removePasswordBtn {
+      background: linear-gradient(45deg, #c2185b, #f06292);
+    }
+
+    #downloadAuthBtn {
+      background: linear-gradient(45deg, #ffb300, #ffd54f);
+    }
+
+    .counter {
+      font-weight: bold;
+      margin: 5px 0;
+      color: #b0bec5;
+      text-align: right;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .separator {
+      margin: 20px 0;
+      border-top: 1px solid #546e7a;
+    }
+
+    .primary {
+      background: linear-gradient(45deg, #0288d1, #4fc3f7);
+      color: #fff;
+    }
+
+    .primary:hover:not(:disabled) {
+      background: linear-gradient(45deg, #4caf50, #81c784);
+    }
+
+    .primary:hover:not(:disabled)::after {
+      content: "🚀";
+      margin-right: 5px;
+    }
+
+    .success {
+      background: linear-gradient(45deg, #0288d1, #4fc3f7);
+      color: #fff;
+      margin-top: 8px;
+    }
+
+    .success:hover:not(:disabled) {
+      background: linear-gradient(45deg, #4caf50, #81c784);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5);
+    }
+
+    .success:hover:not(:disabled)::after {
+      content: "✅";
+      margin-right: 5px;
+    }
+
+    .code {
+      margin-top: 14px;
+      background: #334155;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      padding: 10px;
+      border-radius: 8px;
+      color: #3fb950;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .results {
+      margin-top: 10px;
+    }
+
+    .box {
+      background: #2a2a3a;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 15px 0;
+      display: none;
+    }
+
+    .box.show {
+      display: block;
+    }
+
+    .box h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .active-box h3 {
+      color: #3fb950;
+    }
+
+    .blocked-box h3 {
+      color: #f85149;
+    }
+
+    .duplicates-box h3 {
+      color: #e6a700;
+    }
+
+    .box textarea {
+      background: #2a2a3a;
+      border-radius: 6px;
+      height: 120px;
+      padding: 10px;
+      font-size: 16px;
+      resize: none;
+      margin-bottom: 10px;
+      width: 100%;
+      border: 2px solid #40c4ff;
+      color: #40c4ff;
+      user-select: text;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+    }
+
+    .duplicates-box textarea {
+      color: #e6a700;
+      border-color: #e6a700;
+    }
+
+    .active-box textarea {
+      color: #3fb950;
+      border-color: #3fb950;
+    }
+
+    .blocked-box textarea {
+      color: #f85149;
+      border-color: #f85149;
+    }
+
+    .box button {
+      margin-top: auto;
+    }
+
+    .box .copy-btn {
+      margin-bottom: 8px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 10px;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    #passwordSection .button-group button,
+    #extractIdSection .button-group button {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    #extractIdSection textarea#fbLinks {
+      color: #40c4ff;
+      border-color: #40c4ff;
+    }
+
+    #extractIdSection textarea#result {
+      color: #3fb950;
+      border-color: #3fb950;
+    }
+
+    #extractIdSection textarea#closedLinks {
+      color: #f85149;
+      border-color: #f85149;
+    }
+
+    #filterSection textarea#inputText {
+      color: #40c4ff;
+      border-color: #40c4ff;
+    }
+
+    #filterSection textarea#duplicateLines {
+      color: #e6a700;
+      border-color: #e6a700;
+    }
+
+    #filterSection textarea#uniqueLines {
+      color: #3fb950;
+      border-color: #3fb950;
+    }
+
+    #passwordSection textarea#authInputText {
+      color: #40c4ff;
+      border-color: #40c4ff;
+    }
+
+    /* --- تحسين شكل مربع اختيار التنسيق في أداة التنسيقات --- */
+    #fmtFormat{
+      appearance:none;-webkit-appearance:none;-moz-appearance:none;
+      border:2px solid #40c4ff;background:#e0e0f0;color:#121212;
+      padding:12px 44px 12px 12px;border-radius:10px;box-shadow:0 0 6px rgba(64,196,255,.25);
+      font-size:15px;line-height:1.2;min-height:44px;width:100%;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23121212' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:12px center;background-size:18px;
+      margin-bottom:10px;
+      color-scheme: light only;
+      -webkit-text-fill-color:#121212;
+    }
+    #fmtFormat:hover{box-shadow:0 0 10px rgba(64,196,255,.4)}
+    #fmtFormat:focus{outline:none;border-color:#81c784;box-shadow:0 0 14px rgba(64,196,255,.55)}
+
+    #fmtFormat, #fmtFormat option { color:#121212 !important; }
+    #fmtFormat option { background:#e0e0f0; }
+
+    @media (max-width: 768px) {
+      .nav-buttons .button-row {
+        display: flex;
+        gap: 5px;
+        overflow-x: auto;
+      }
+
+      .nav-buttons button {
+        min-width: 90px;
+        padding: 8px;
+        font-size: 12px;
+      }
+
+      .section {
+        width: 100%;
+      }
+
+      textarea {
+        height: 150px;
+      }
+
+      button, input[type="file"] {
+        width: 100%;
+      }
+
+      #passwordSection .button-group,
+      #extractIdSection .button-group {
+        flex-wrap: wrap;
+      }
+
+      #passwordSection .button-group button,
+      #extractIdSection .button-group button {
+        min-width: 100px;
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      .header-box h2 {
+        font-size: 28px;
+      }
+
+      .welcome-box .verse {
+        font-size: 16px;
+      }
+
+      .welcome-box .welcome-message,
+      .welcome-box .whatsapp {
+        font-size: 14px;
+      }
+
+      .box {
+        margin: 10px 0;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .section {
+        width: 100%;
+      }
+
+      textarea {
+        height: 250px;
+      }
+
+      button, input[type="file"] {
+        width: auto;
+      }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V5RPM5QYPC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V5RPM5QYPC');
+  </script>
+</head>
+<body>
+  <div class="header-box">
+    <h2>🇪🇬 HAMZA ELMASRIY 🇪🇬</h2>
+    <div class="welcome-box">
+      <div class="verse">إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا 🙏</div>
+      <div class="welcome-message">مرحبا بك يا صديقي العزيز أنا هنا لمساعدتك 😊</div>
+      <div class="whatsapp">📱 رقم الواتساب: <a href="https://wa.me/+201273166280" target="_blank" style="color: #0FFF50; text-decoration: none;">01273166280</a></div>
+    </div>
+  </div>
+
+  <h1>🎉 Facebook Tools 🎉</h1>
+
+  <div class="nav-buttons">
+    <div class="button-row">
+      <button id="checkerBtn" class="active" onclick="showSection('checkerSection')"> فحص الحسابات </button>
+      <button id="twofaBtn" onclick="showSection('twofaSection')">توليد الكود 🔑</button>
+      <button id="extractIdBtn" onclick="showSection('extractIdSection')">استخراج الآيدي </button>
+    </div>
+    <div class="button-row">
+      <button id="filterBtn" onclick="showSection('filterSection')">فلترة التكرار 🔍</button>
+      <button id="passwordBtn" onclick="showSection('passwordSection')">إدارة الباسورد 🔐</button>
+      <button id="formatterBtn" onclick="showSection('formatterSection')">تنسيق الحسابات 🧰</button>
+    </div>
+  </div>
+
+  <div class="section visible" id="checkerSection">
+    <h2>فحص الحسابات ✅</h2>
+    <input type="file" id="checkerFileInput" accept="*/*" onchange="uploadFile('checkerFileInput', 'inputBox', 'checkerInputCount')" />
+    <div class="counter">عدد السطور: <span id="checkerInputCount">0</span> 📊</div>
+    <textarea id="inputBox" placeholder="الصق الحسابات هنا (أي تنسيق يحتوي على ID) ✍️" oninput="updateCount('inputBox', 'checkerInputCount')"></textarea>
+    <button id="checkBtn" onclick="checkIDs()">معالجة 🔄</button>
+
+    <div class="results">
+      <div class="box duplicates-box" id="duplicateContainer">
+        <h3>Duplicates (<span id="duplicateCount">0</span>)</h3>
+        <textarea id="duplicateBox" readonly placeholder="لا توجد تكرارات..."></textarea>
+        <button class="copy-btn" onclick="copyText('duplicateBox', this)">نسخ الكل ⚠️</button>
+        <button class="download-btn" onclick="downloadText('duplicateBox', 'duplicates.txt')">تنزيل كملف 💾</button>
+      </div>
+      <div class="box active-box" id="activeContainer">
+        <h3>Active (<span id="activeCount">0</span>)</h3>
+        <textarea id="activeBox" readonly placeholder="لا توجد حسابات بعد..."></textarea>
+        <button class="copy-btn" onclick="copyText('activeBox', this)">نسخ الكل ✅</button>
+        <button class="download-btn" onclick="downloadText('activeBox', 'active_accounts.txt')">تنزيل كملف 💾</button>
+      </div>
+      <div class="box blocked-box" id="blockedContainer">
+        <h3>Blocked (<span id="blockedCount">0</span>)</h3>
+        <textarea id="blockedBox" readonly placeholder="لا توجد حسابات بعد..."></textarea>
+        <button class="copy-btn" onclick="copyText('blockedBox', this)">نسخ الكل ❌</button>
+        <button class="download-btn" onclick="downloadText('blockedBox', 'blocked_accounts.txt')">تنزيل كملف 💾</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="twofaSection">
+    <h2>توليد رمز 2FA للفيسبوك 🔑</h2>
+    <textarea id="secret" placeholder="ادخل مفاتيح المصادقة هنا، كل مفتاح في سطر... 🔍" style="width: 100%; height: 100px; font-size: 18px;"></textarea>
+    <button class="primary" id="generateBtn" onclick="generate()">توليد الأكواد 🔢</button>
+    <div id="code" class="code"></div>
+    <button class="primary" id="copyAllCodesBtn" onclick="copyAllCodes()">نسخ جميع الأكواد 📋</button>
+  </div>
+
+  <div class="section" id="extractIdSection">
+    <h2>استخراج الآيدي 🆔</h2>
+    <input type="file" id="fileInput" accept=".txt,.csv,.json" onchange="uploadFile('fileInput', 'fbLinks', 'inputCount')" />
+    <div class="counter">عدد الروابط: <span id="inputCount">0</span> 📊</div>
+    <textarea id="fbLinks" placeholder="ألصق روابط فيسبوك هنا كل رابط في سطر..."></textarea>
+    <div class="button-group">
+      <button onclick="extractIDs()" id="extractBtn">استخراج الإيديهات 🚀</button>
+    </div>
+    <div id="resultBox" style="display:none;">
+      <div class="counter">عدد الإيديهات: <span id="resultCount">0</span> 📊</div>
+      <textarea id="result" readonly></textarea>
+      <div class="button-group">
+        <button id="copyBtn" class="copy-btn" onclick="copyAll()">نسخ الكل 📋</button>
+        <button id="downloadBtn" class="download-btn" onclick="downloadResults()">تحميل كملف 💾</button>
+      </div>
+      <div class="counter">عدد الروابط المقفولة: <span id="closedLinksCount">0</span> 📊</div>
+      <textarea id="closedLinks" placeholder="الروابط المقفولة ستظهر هنا" readonly></textarea>
+      <div class="button-group">
+        <button id="copyClosedBtn" class="copy-btn" onclick="copyClosedLinks()">نسخ الكل 📋</button>
+        <button id="downloadClosedBtn" class="download-btn" onclick="downloadClosedLinks()">تحميل كملف 💾</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="filterSection">
+    <h2>فلترة التكرار 🔍</h2>
+    <input type="file" id="filterFileInput" accept=".txt,.csv" onchange="uploadFile('filterFileInput', 'inputText', 'inputCountFilter')">
+    <div class="counter">عدد السطور: <span id="inputCountFilter">0</span> 📊</div>
+    <textarea id="inputText" placeholder="أدخل النصوص هنا (سطر في كل مرة) ✍️" oninput="updateCount('inputText', 'inputCountFilter')"></textarea>
+    <br>
+    <button id="extractBtn" onclick="extractLines(this)">استخراج 🚀</button>
+
+    <div class="section" id="duplicateSection">
+      <div class="counter">عدد السطور المكررة: <span id="dupCount">0</span> 📊</div>
+      <textarea id="duplicateLines" readonly></textarea>
+      <br>
+      <button class="copy-btn" onclick="copyText('duplicateLines', this)">نسخ المكرر 📋</button>
+      <button class="download-btn" onclick="downloadText('duplicateLines', 'duplicate_lines.txt')">تنزيل كملف 💾</button>
+    </div>
+
+    <div class="section" id="uniqueSection">
+      <div class="counter">عدد السطور الفريدة: <span id="uniqCount">0</span> 📊</div>
+      <textarea id="uniqueLines" readonly></textarea>
+      <br>
+      <button class="copy-btn" onclick="copyText('uniqueLines', this)">نسخ الفريد 📋</button>
+      <button class="download-btn" onclick="downloadText('uniqueLines', 'unique_lines.txt')">تنزيل كملف 💾</button>
+    </div>
+  </div>
+
+  <div class="section" id="passwordSection">
+    <h2>إدارة الباسورد 🔐</h2>
+    <input type="file" id="authFileInput" accept=".txt,.csv" onchange="uploadFile('authFileInput', 'authInputText', 'authInputCount')">
+    <div class="counter">عدد السطور: <span id="authInputCount">0</span> 📊</div>
+    <textarea id="authInputText" placeholder="أدخل النصوص هنا (:✍️" oninput="updateCount('authInputText', 'authInputCount')"></textarea>
+    <input type="text" id="authNewPassword" placeholder="أدخل الباسورد الجديد هنا 🔑">
+    <div class="button-group">
+      <button id="addPasswordBtn" onclick="addAuthPassword()">إضافة الباسورد 🔑</button>
+      <button id="removePasswordBtn" onclick="removeAuthPassword()">إزالة الباسورد 🔐</button>
+      <button id="copyAuthBtn" class="copy-btn" onclick="copyText('authInputText', this)">نسخ الكل 📋</button>
+      <button id="downloadAuthBtn" class="download-btn" onclick="downloadText('authInputText', 'auth_password_output.txt')">تحميل كملف 💾</button>
+    </div>
+  </div>
+
+  <!-- القسم الجديد: تنسيق/تدقيق الحسابات -->
+  <div class="section" id="formatterSection">
+    <h2>تنسيق الحسابات 🧰</h2>
+
+    <label class="counter">اختيار التنسيق المطلوب</label>
+    <select id="fmtFormat">
+      <option value="idpass">ID:PASS</option>
+      <option value="idpass_cookies">ID:PASS:COOKIES</option>
+      <option value="idpass_auth">ID:PASS:AUTH</option>
+      <option value="idpass_auth_cookies" selected>ID:PASS:AUTH:COOKIES</option>
+    </select>
+
+    <input type="file" id="fmtFileInput" accept=".txt" onchange="uploadFile('fmtFileInput','fmtInput','fmtInputCount')" />
+
+    <div class="counter">عدد السطور: <span id="fmtInputCount">0</span> 📊</div>
+    <textarea id="fmtInput" placeholder="ألصق الحسابات هنا..." oninput="updateCount('fmtInput','fmtInputCount')"></textarea>
+    <button id="fmtProcessBtn" class="primary" onclick="processFormats(this)">معالجة 🔄</button>
+
+    <div class="results">
+      <!-- صندوق المكرر لأداة التنسيق -->
+      <div class="box duplicates-box" id="fmtDupBoxWrap">
+        <h3>المكررة (حسب الـID/السطر) (<span id="fmtDupCount">0</span>)</h3>
+        <textarea id="fmtDup" readonly placeholder="لا توجد تكرارات..."></textarea>
+        <button class="copy-btn" onclick="copyText('fmtDup', this)">نسخ المكرر 📋</button>
+        <button class="download-btn" onclick="downloadText('fmtDup', 'fmt_duplicates.txt')">تنزيل كملف 💾</button>
+      </div>
+
+      <div class="box active-box" id="fmtOkBoxWrap">
+        <h3>الصحيح (<span id="fmtOkCount">0</span>)</h3>
+        <textarea id="fmtOk" readonly placeholder="السطور المطابقة تمامًا ستظهر هنا"></textarea>
+        <button class="copy-btn" onclick="copyText('fmtOk', this)">نسخ الكل ✅</button>
+        <button class="download-btn" onclick="downloadText('fmtOk', 'valid_accounts.txt')">تنزيل كملف 💾</button>
+      </div>
+
+      <div class="box blocked-box" id="fmtErrBoxWrap">
+        <h3>الأخطاء (<span id="fmtErrCount">0</span>)</h3>
+        <textarea id="fmtErr" readonly placeholder="أي سطر به مشكلة سيظهر هنا مع السبب"></textarea>
+        <button class="copy-btn" onclick="copyText('fmtErr', this)">نسخ الأخطاء ❌</button>
+        <button class="download-btn" onclick="downloadText('fmtErr', 'invalid_accounts.txt')">تنزيل كملف 💾</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var gk_isXlsx = false;
+    var gk_xlsxFileLookup = {};
+    var gk_fileData = {};
+    function filledCell(cell) {
+      return cell !== '' && cell != null;
+    }
+    function loadFileData(filename) {
+      if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+        try {
+          var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+          var firstSheetName = workbook.SheetNames[0];
+          var worksheet = workbook.Sheets[firstSheetName];
+          var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+          var filteredData = jsonData.filter(row => row.some(filledCell));
+          var headerRowIndex = filteredData.findIndex((row, index) =>
+            row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+          );
+          if (headerRowIndex === -1 || headerRowIndex > 25) {
+            headerRowIndex = 0;
+          }
+          var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+          csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+          return csv;
+        } catch (e) {
+          console.error(e);
+          return "";
+        }
+      }
+      return gk_fileData[filename] || "";
+    }
+
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('visible');
+      });
+      document.getElementById(sectionId).classList.add('visible');
+
+      document.querySelectorAll('.nav-buttons button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      if (sectionId === 'checkerSection') {
+        document.getElementById('checkerBtn').classList.add('active');
+      } else if (sectionId === 'twofaSection') {
+        document.getElementById('twofaBtn').classList.add('active');
+      } else if (sectionId === 'extractIdSection') {
+        document.getElementById('extractIdBtn').classList.add('active');
+      } else if (sectionId === 'filterSection') {
+        document.getElementById('filterBtn').classList.add('active');
+      } else if (sectionId === 'passwordSection') {
+        document.getElementById('passwordBtn').classList.add('active');
+      } else if (sectionId === 'formatterSection') {
+        document.getElementById('formatterBtn').classList.add('active');
+      }
+    }
+
+    function updateCount(textId, countId) {
+      const lines = document.getElementById(textId).value.trim().split("\n").filter(line => line.trim() !== "");
+      document.getElementById(countId).innerText = lines.length;
+    }
+
+    function uploadFile(fileInputId, textAreaId, countId) {
+      const fileInput = document.getElementById(fileInputId);
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const fileExt = file.name.split('.').pop().toLowerCase();
+      if (['xlsx', 'xls'].includes(fileExt)) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          gk_isXlsx = true;
+          gk_xlsxFileLookup[file.name] = true;
+          gk_fileData[file.name] = e.target.result.split(',')[1]; // Base64 data
+          const content = loadFileData(file.name);
+          document.getElementById(textAreaId).value = content;
+          updateCount(textAreaId, countId);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          gk_isXlsx = false;
+          gk_fileData[file.name] = e.target.result;
+          document.getElementById(textAreaId).value = e.target.result;
+          updateCount(textAreaId, countId);
+        };
+        reader.readAsText(file);
+      }
+    }
+
+    function downloadText(textId, filename) {
+      const text = document.getElementById(textId).value;
+      const blob = new Blob([text], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    /* ================= أدوات تنظيف/تعقيم عامة ================= */
+    const INVIS_REGEX = /[\u200B-\u200F\u061C\u202A-\u202E\u2060\u2066-\u2069\uFEFF]/g; // BiDi + ZeroWidth + BOM
+    function stripInvisible(s){ return (s||'').replace(INVIS_REGEX,''); }
+    function normalizeDigits(s){
+      return (s||'')
+        .replace(/[٠-٩]/g, d => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
+        .replace(/[۰-۹]/g, d => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+    }
+    function sanitizeIdField(raw){
+      const cleaned = normalizeDigits(stripInvisible(raw||''));
+      return cleaned.replace(/[^\d]/g,''); // أرقام فقط
+    }
+    function extractCookieUidSafe(ck){
+      if(!ck) return null;
+      // 12–16 رقم
+      const m = stripInvisible(ck).match(/(?:^|[;\s])c_user=(\d{12,16})\b/);
+      return m ? sanitizeIdField(m[1]) : null;
+    }
+
+    // ✅ تنظيف ذكي يحافظ على الإيميل في أول جزء عندما لا يكون ID
+    function cleanWholeLine(orig, opts = {}) {
+      const allowNonNumericFirst = (opts && opts.allowNonNumericFirst) !== false; // default true
+      const parts = (orig || '').split(':');
+
+      if (parts.length > 0) {
+        const firstRaw = stripInvisible(parts[0]);
+        if (allowNonNumericFirst) {
+          const looksLikeId = /^\d{12,16}$/.test(firstRaw);
+          parts[0] = looksLikeId ? sanitizeIdField(firstRaw) : firstRaw;
+        } else {
+          parts[0] = sanitizeIdField(firstRaw);
+        }
+      }
+      for (let i = 1; i < parts.length; i++) parts[i] = stripInvisible(parts[i]);
+      // إزالة المسافات حول النقطتين
+      return parts.join(':').replace(/\s*:\s*/g,':').trim();
+    }
+
+    /* 🔁 إدارة حالة الأزرار بتوقيت ذكي ويرجع اللون الأصلي */
+    function activateButton(button, originalText, successText, originalColor, successColor) {
+      if (!button.dataset._origText) button.dataset._origText = originalText || button.innerText;
+      if (!button.dataset._origBg) button.dataset._origBg = button.style.background || "";
+      if (successText) button.innerText = successText;
+      if (successColor) button.style.background = successColor;
+      return () => {
+        button.innerText = button.dataset._origText;
+        if (button.dataset._origBg) {
+          button.style.background = button.dataset._origBg;
+        } else {
+          button.style.background = "";
+        }
+      };
+    }
+
+    function copyText(textId, button) {
+      const textarea = document.getElementById(textId);
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        const originalText = button.dataset.originalText || button.innerText;
+        const revertButton = activateButton(button, originalText, "تم النسخ! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+        setTimeout(revertButton, 800);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        alert("فشل النسخ! ⚠️");
+      });
+    }
+
+    function normalizeLine(line) {
+      line = line.replace(/[\s\t]+$/g, '');
+      line = line.replace(/\t/g, ':');
+      line = line.replace(/\s*:\s*/g, ':');
+      return line;
+    }
+
+    function addAuthPassword() {
+      const button = document.getElementById("addPasswordBtn");
+      const originalText = button.innerText;
+      const revertButton = activateButton(button, originalText, "تم الإضافة! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+
+      const newPassword = document.getElementById("authNewPassword").value.trim();
+      if (!newPassword) {
+        alert("يرجى إدخال باسورد جديد! ⚠️");
+        revertButton();
+        return;
+      }
+
+      const inputText = document.getElementById("authInputText");
+      const lines = inputText.value.split("\n").filter(line => line.trim() !== "");
+      const output = lines.map(line => {
+        line = normalizeLine(line);
+        const parts = line.split(":").map(part => part.trim());
+        if (parts.length < 1) {
+          return line;
+        }
+        parts.splice(1, 0, newPassword);
+        return parts.join(":");
+      });
+
+      inputText.value = output.join("\n");
+      updateCount("authInputText", "authInputCount");
+
+      setTimeout(revertButton, 800);
+    }
+
+    function removeAuthPassword() {
+      const button = document.getElementById("removePasswordBtn");
+      const originalText = button.innerText;
+      const revertButton = activateButton(button, originalText, "تم الإزالة! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+
+      const inputText = document.getElementById("authInputText");
+      const lines = inputText.value.split("\n").filter(line => line.trim() !== "");
+      const output = lines.map(line => {
+        line = normalizeLine(line);
+        const parts = line.split(":").map(part => part.trim());
+        if (parts.length < 2) {
+          return line;
+        }
+        parts.splice(1, 1);
+        return parts.join(":");
+      });
+
+      inputText.value = output.join("\n");
+      updateCount("authInputText", "authInputCount");
+
+      setTimeout(revertButton, 800);
+    }
+
+    function extractLines(button) {
+      const revertButton = activateButton(button, "استخراج 🚀", "تم! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+      
+      const inputElem = document.getElementById("inputText");
+      const input = inputElem.value.trim().split("\n")
+        .map(line => cleanWholeLine(line, { allowNonNumericFirst: true }))
+        .filter(line => line !== "");
+      
+      // تكرار بالـID وبالسطر الكامل
+      const keyIdSeen = {};
+      const lineSeen = {};
+      const allDuplicates = [];
+      const uniques = [];
+
+      // ملتقط ID عام (12–16 رقم) مع أولوية c_user
+      function pickId(line){
+        const s = stripInvisible(String(line));
+        let m = s.match(/(?:^|[;\s])c_user=(\d{12,16})\b/);
+        if (m) return sanitizeIdField(m[1]);
+        m = s.match(/^(\d{12,16})\b/);
+        if (m) return sanitizeIdField(m[1]);
+        m = s.match(/(\d{12,16})/);
+        return m ? sanitizeIdField(m[1]) : null;
+      }
+
+      input.forEach(line => {
+        const id = pickId(line);
+        let dup = false;
+        if (id) {
+          if (keyIdSeen[id]) { allDuplicates.push(line); dup = true; }
+          else keyIdSeen[id] = true;
+        }
+        if (lineSeen[line]) {
+          if (!dup) allDuplicates.push(line);
+          dup = true;
+        } else {
+          lineSeen[line] = true;
+        }
+        if (!dup) uniques.push(line);
+      });
+
+      document.getElementById("duplicateLines").value = allDuplicates.join("\n");
+      document.getElementById("uniqueLines").value = uniques.join("\n");
+      
+      updateCount("duplicateLines", "dupCount");
+      updateCount("uniqueLines", "uniqCount");
+      
+      inputElem.value = "";
+      updateCount("inputText", "inputCountFilter");
+      
+      if (allDuplicates.length > 0) {
+        document.getElementById("duplicateSection").classList.add("visible");
+      } else {
+        document.getElementById("duplicateSection").classList.remove("visible");
+      }
+      document.getElementById("uniqueSection").classList.add("visible");
+      
+      revertButton();
+    }
+
+    async function generate() {
+      const button = document.getElementById('generateBtn');
+      const originalText = button.innerText;
+      const revertButton = activateButton(button, originalText, "جاري التوليد... ⏳", null, "linear-gradient(45deg, #4caf50, #81c784)");
+
+      const secrets = document.getElementById('secret').value.trim().split("\n").map(s => s.trim().toUpperCase()).filter(s => s);
+      if (secrets.length === 0) {
+        alert('أدخل على الأقل مفتاح واحد ⚠️');
+        revertButton();
+        return;
+      }
+
+      const codeDiv = document.getElementById('code');
+      codeDiv.innerHTML = '';
+
+      try {
+        const responses = await Promise.all(secrets.map(secret => {
+          const clean = secret.replace(/[^A-Z2-7]/g, '');
+          return fetch(`/.netlify/functions/getcode?secret=${encodeURIComponent(clean)}`)
+            .then(r => r.ok ? r.json() : Promise.reject({ secret, error: 'Invalid response' }));
+        }));
+
+        responses.forEach(res => {
+          const codeItem = document.createElement('div');
+          codeItem.innerText = res.code;
+          codeDiv.appendChild(codeItem);
+        });
+
+        revertButton();
+      } catch (error) {
+        console.error('Error generating codes:', error);
+        codeDiv.innerText = 'Error ❌';
+        revertButton();
+      }
+    }
+
+    function copyAllCodes() {
+      const codes = Array.from(document.querySelectorAll('#code div')).map(div => div.innerText).join('\n');
+      navigator.clipboard.writeText(codes).then(() => {
+        const button = document.getElementById('copyAllCodesBtn');
+        const originalText = button.innerText;
+        const revertButton = activateButton(button, originalText, "تم النسخ! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+        setTimeout(revertButton, 800);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        alert("فشل النسخ! ⚠️");
+      });
+    }
+
+    async function extractIDs() {
+      const textarea = document.getElementById("fbLinks");
+      const resultBox = document.getElementById("resultBox");
+      const resultArea = document.getElementById("result");
+      const closedLinksArea = document.getElementById("closedLinks");
+      const extractBtn = document.getElementById("extractBtn");
+      const links = textarea.value.split('\n').map(link => link.trim()).filter(Boolean);
+      if (links.length === 0) return alert("يرجى إدخال روابط أولاً ⚠️");
+      
+      textarea.value = "";
+      updateCount("fbLinks", "inputCount");
+      
+      resultBox.style.display = 'block';
+      resultArea.value = "⏳ جاري استخراج الإيديهات...";
+      closedLinksArea.value = "";
+      
+      const revertButton = activateButton(extractBtn, "استخراج الإيديهات 🚀", "جاري المعالجة... ⏳", null, "linear-gradient(45deg, #4caf50, #81c784)");
+      
+      try {
+        const res = await fetch("/.netlify/functions/get_ids", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ urls: links })
+        });
+        const data = await res.json();
+        
+        if (data.success) {
+          resultArea.value = data.ids.join("\n");
+          document.getElementById("resultCount").innerText = data.ids.length;
+          if (data.failed_urls && data.failed_urls.length > 0) {
+            closedLinksArea.value = data.failed_urls.join("\n");
+            document.getElementById("closedLinksCount").innerText = data.failed_urls.length;
+          } else {
+            closedLinksArea.value = "لا توجد روابط مقفولة";
+            document.getElementById("closedLinksCount").innerText = 0;
+          }
+        } else {
+          resultArea.value = "❌ حدث خطأ أثناء استخراج الإيديهات";
+          closedLinksArea.value = "غير معروف";
+          document.getElementById("closedLinksCount").innerText = 0;
+        }
+      } catch (error) {
+        console.error('Error extracting IDs:', error);
+        resultArea.value = "❌ حدث خطأ أثناء استخراج الإيديهات";
+        closedLinksArea.value = "غير معروف";
+        document.getElementById("closedLinksCount").innerText = 0;
+      } finally {
+        revertButton();
+      }
+    }
+
+    function copyAll() {
+      const resultArea = document.getElementById("result");
+      navigator.clipboard.writeText(resultArea.value).then(() => {
+        const btn = document.getElementById("copyBtn");
+        const originalText = btn.dataset.originalText || btn.innerText;
+        const revertButton = activateButton(btn, originalText, "تم النسخ! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+        setTimeout(revertButton, 800);
+      }).catch(err => {
+               console.error('Failed to copy:', err);
+        alert("فشل النسخ! ⚠️");
+      });
+    }
+
+    function downloadResults() {
+      const resultArea = document.getElementById("result");
+      const blob = new Blob([resultArea.value], { type: "text/plain;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "facebook_ids.txt";
+      link.click();
+      const btn = document.getElementById("downloadBtn");
+      const originalText = btn.dataset.originalText || btn.innerText;
+      const revertButton = activateButton(btn, originalText, "تم! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+      setTimeout(revertButton, 800);
+    }
+
+    function copyClosedLinks() {
+      const closedLinksArea = document.getElementById("closedLinks");
+      navigator.clipboard.writeText(closedLinksArea.value).then(() => {
+        const btn = document.getElementById("copyClosedBtn");
+        const originalText = btn.dataset.originalText || btn.innerText;
+        const revertButton = activateButton(btn, originalText, "تم النسخ! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+        setTimeout(revertButton, 800);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        alert("فشل النسخ! ⚠️");
+      });
+    }
+
+    function downloadClosedLinks() {
+      const closedLinksArea = document.getElementById("closedLinks");
+      const blob = new Blob([closedLinksArea.value], { type: "text/plain;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "closed_links.txt";
+      link.click();
+      const btn = document.getElementById("downloadClosedBtn");
+      const originalText = btn.dataset.originalText || btn.innerText;
+      const revertButton = activateButton(btn, originalText, "تم! ✅", null, "linear-gradient(45deg, #4caf50, #81c784)");
+      setTimeout(revertButton, 800);
+    }
+
+    /* ========= فحص الحسابات: 12–16 رقم + أولوية c_user + تكرار بالـID وبالسطر كامل ========= */
+    async function checkIDs() {
+      const btn = document.getElementById('checkBtn');
+      const originalText = btn.innerText;
+      const revertButton = activateButton(btn, originalText, "جار المعالجة... ⏳", null, "linear-gradient(45deg, #4caf50, #81c784)");
+
+            // ===== استخراج URL من أي مكان في السطر (حتى لو قبله نص/أكواد) =====
+      function extractUrlsFromLine(line) {
+        const s = stripInvisible(String(line || ''));
+
+        const urls = [];
+
+        // URLs كاملة
+        const reFull = /https?:\/\/[^\s]+/gi;
+        let m;
+        while ((m = reFull.exec(s)) !== null) urls.push(m[0]);
+
+        // facebook.com/... أو fb.me/... بدون http
+        const reNaked = /\b(?:www\.)?(?:m\.)?(?:facebook\.com|fb\.me|fb\.com)\/[^\s]+/gi;
+        while ((m = reNaked.exec(s)) !== null) urls.push(m[0]);
+
+        // تنظيف
+        const cleaned = [];
+        for (let u of urls) {
+          u = u.trim();
+          // شيل علامات في آخر الرابط
+          while (u && /[)\],.;'"\u060c\u061b]+$/.test(u)) u = u.slice(0, -1);
+
+          if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+          cleaned.push(u);
+        }
+
+        // إزالة تكرار
+        return Array.from(new Set(cleaned));
+      }
+
+      function hasFacebookHint(line){
+        const s = stripInvisible(String(line || ''));
+        return /(facebook\.com|fb\.me|fb\.com)/i.test(s);
+      }
+
+      function extractStartId(line){
+        const s = stripInvisible(String(line || ''));
+        const m = s.match(/^\s*(\d{12,16})\b/);
+        return m ? sanitizeIdField(m[1]) : null;
+      }
+
+      // ===== ID مباشر من السطر (يفضل أنماط فيسبوك، ويتجنب أرقام الهاتف لو فيه رابط) =====
+      function pickIdSmart(line){
+        const s = stripInvisible(String(line || ''));
+
+        // c_user من الكوكيز
+        let m = s.match(/(?:^|[;\s])c_user=(\d{12,16})\b/);
+        if (m) return sanitizeIdField(m[1]);
+
+        // أنماط ID داخل روابط/باراميترات معروفة
+        m = s.match(/profile\.php\?[^#\s]*\bid=(\d{12,16})\b/i);
+        if (m) return sanitizeIdField(m[1]);
+
+        m = s.match(/\bfb:\/\/profile\/(\d{12,16})\b/i);
+        if (m) return sanitizeIdField(m[1]);
+
+        m = s.match(/[?&]id=(\d{12,16})\b/i);
+        if (m) return sanitizeIdField(m[1]);
+
+        // لو فيه hint انه فيسبوك: ما نلقطش أي 12–16 رقم عشوائي (غالباً تليفون)
+        if (hasFacebookHint(s)) return null;
+
+        // fallback (لو مفيش أي روابط/هنت فيسبوك)
+        m = s.match(/^\s*(\d{12,16})\b/);
+        if (m) return sanitizeIdField(m[1]);
+
+        m = s.match(/(\d{12,16})/);
+        return m ? sanitizeIdField(m[1]) : null;
+      }
+
+      // ===== حلّ ID من الرابط (سيرفر-سايد) + Cache =====
+      const __urlIdCache = new Map();
+      async function resolveIdFromUrl(url) {
+        const u = String(url || '').trim();
+        if (!u) return null;
+        if (__urlIdCache.has(u)) return __urlIdCache.get(u);
+
+        try {
+          const res = await fetch('/.netlify/functions/get_ids', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ urls: [u] })
+          });
+          const json = await res.json();
+          const id = sanitizeIdField((Array.isArray(json?.ids) && json.ids[0]) ? json.ids[0] : '');
+          const out = id || null;
+          __urlIdCache.set(u, out);
+          return out;
+        } catch (_) {
+          __urlIdCache.set(u, null);
+          return null;
+        }
+      }
+
+      try {
+        const rawLines = document.getElementById('inputBox').value.split('\n').map(l => l.trim()).filter(l => l);
+        // نسيب أول جزء لو إيميل زي ما هو
+        const cleanedLines = rawLines.map(l => cleanWholeLine(l, { allowNonNumericFirst: true }));
+
+        document.getElementById('inputBox').value = '';
+        updateCount('inputBox', 'checkerInputCount');
+
+        // خرائط للتكرار: بالـID وبالسطر الكامل
+        const byId = {};
+        const byLine = {};
+        const duplicates = [];
+        const uniqueLines = [];
+
+        cleanedLines.forEach(line => {
+          const id = pickIdSmart(line);
+          let isDup = false;
+
+          if (id) {
+            if (byId[id]) { duplicates.push(line); isDup = true; }
+            else { byId[id] = line; }
+          }
+
+          if (byLine[line]) {
+            if (!isDup) duplicates.push(line);
+            isDup = true;
+          } else {
+            byLine[line] = true;
+          }
+
+          if (!isDup) uniqueLines.push(line);
+        });
+
+        const dupCont = document.getElementById('duplicateContainer');
+        if (duplicates.length) {
+          dupCont.classList.add('show');
+          document.getElementById('duplicateBox').value = duplicates.join('\n');
+          document.getElementById('duplicateCount').innerText = duplicates.length;
+        } else {
+          dupCont.classList.remove('show');
+        }
+
+        const linesWithIds = await Promise.all(uniqueLines.map(async (line) => {
+          // 1) ID مباشر من السطر (أنماط فيسبوك فقط)
+          let id = pickIdSmart(line);
+
+          // 2) لو مفيش ID: جرّب استخرج من أي رابط جوه السطر (حتى لو Username/Share)
+          if (!id) {
+            const urls = extractUrlsFromLine(line);
+            if (urls.length) {
+              id = await resolveIdFromUrl(urls[0]);
+
+              // fallback أخير: لو فشل استخراج الـID من الرابط، خُد أول رقم في أول السطر (لو موجود)
+              if (!id) id = extractStartId(line);
+            }
+          }
+
+          return { line, id };
+        }));
+        const uids = linesWithIds.map(x => x.id).filter(Boolean);
+
+        const blocked = [];
+        const active = [];
+
+        if (!uids.length) {
+          uniqueLines.forEach(line => blocked.push(line));
+          document.getElementById('activeBox').value = '';
+          document.getElementById('blockedBox').value = blocked.join('\n');
+          document.getElementById('activeCount').innerText = 0;
+          document.getElementById('blockedCount').innerText = blocked.length;
+          document.getElementById('activeContainer').classList.remove('show');
+          document.getElementById('blockedContainer').classList.add('show');
+          revertButton();
+          return;
+        }
+
+        const chunkSize = 1000;
+        const chunks = [];
+        for (let i = 0; i < uids.length; i += chunkSize) chunks.push(uids.slice(i, i + chunkSize));
+
+        const statusMap = {};
+        for (let i = 0; i < chunks.length; i++) {
+          btn.innerText = `جار المعالجة... ⏳ (دفعة ${i + 1} من ${chunks.length})`;
+          const res = await fetch('/.netlify/functions/proxyChecker', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ids: chunks[i] })
+          });
+          const json = await res.json();
+          const arr = Array.isArray(json?.data) ? json.data : [];
+          arr.forEach(acc => {
+            const uid = sanitizeIdField(acc?.uid);
+            const msg = String(acc?.status?.message || '').toLowerCase();
+            const isActive = /active|ok|success/.test(msg);
+            if (uid) statusMap[uid] = isActive;
+          });
+        }
+
+        linesWithIds.forEach(({ line, id }) => {
+          if (!id) { blocked.push(line); return; }
+          if (!(id in statusMap)) { blocked.push(line); return; }
+          if (statusMap[id]) active.push(line); else blocked.push(line);
+        });
+
+        document.getElementById('activeBox').value = active.join('\n');
+        document.getElementById('blockedBox').value = blocked.join('\n');
+        document.getElementById('activeCount').innerText = active.length;
+        document.getElementById('blockedCount').innerText = blocked.length;
+
+        const activeCont = document.getElementById('activeContainer');
+        const blockedCont = document.getElementById('blockedContainer');
+        if (active.length) activeCont.classList.add('show'); else activeCont.classList.remove('show');
+        if (blocked.length) blockedCont.classList.add('show'); else blockedCont.classList.remove('show');
+
+        revertButton();
+      } catch (error) {
+        console.error('Error checking IDs:', error);
+        document.getElementById('activeBox').value = '';
+        document.getElementById('blockedBox').value = '❌ حدث خطأ أثناء فحص الحسابات';
+        document.getElementById('activeCount').innerText = 0;
+        document.getElementById('blockedCount').innerText = 1;
+        document.getElementById('activeContainer').classList.remove('show');
+        document.getElementById('blockedContainer').classList.add('show');
+        revertButton();
+      }
+    }
+
+    /* ================== منطق أداة التنسيق/التدقيق ================== */
+    const reId14 = /^61\d{12}$/;
+    function fmtIsValidAuth(a){
+      if(!a) return false;
+      a = a.trim().replace(/\s+/g,' ');
+      const parts = a.split(' ');
+      if(parts.length!==8) return false;
+      return parts.every(x => /^[A-Za-z0-9]{4}$/.test(x));
+    }
+
+    // ✅ الكوكيز لازم تحتوي datr, c_user, xs, sb وقيمهم موجودة
+    function fmtValidateCookies(raw){
+      if(!raw) return {ok:false, reason:'COOKIES فارغة'};
+      const s = stripInvisible(raw.trim());
+      if(!/^datr\s*=/.test(s)) return {ok:false, reason:'لا تبدأ بـ datr='};
+
+      const map = {};
+      s.split(';').forEach(pair=>{
+        const [k,...rest] = pair.split('=');
+        if(!k) return;
+        const key = k.trim();
+        const val = (rest.join('=')||'').trim();
+        if (key) map[key] = val;
+      });
+
+      const required = ['datr','c_user','xs','sb'];
+      const missing = required.filter(k => !(k in map) || !map[k]);
+      if(missing.length) return {ok:false, reason:'مفاتيح ناقصة/فارغة: '+missing.join(', ')};
+
+      // قيم أساسية سليمة
+      if(!/^\d{12,16}$/.test(map['c_user'])) return {ok:false, reason:'c_user غير صالح'};
+      if(!map['xs']) return {ok:false, reason:'xs فارغة'};
+      if(!map['datr']) return {ok:false, reason:'datr فارغة'};
+
+      return {ok:true};
+    }
+
+    function fmtNormalize(line){
+      return stripInvisible(line).replace(/\s*:\s*/g,':').trim();
+    }
+
+    async function processFormats(btn){
+      const originalText = btn.innerText;
+      const revert = activateButton(btn, originalText, "جارِ المعالجة... ⏳", null, "linear-gradient(45deg, #4caf50, #81c784)");
+
+      const fmt = document.getElementById('fmtFormat').value;
+      const ta = document.getElementById('fmtInput');
+      const okTa = document.getElementById('fmtOk');
+      const errTa = document.getElementById('fmtErr');
+      const okCount = document.getElementById('fmtOkCount');
+      const errCount = document.getElementById('fmtErrCount');
+
+      const dupBoxWrap = document.getElementById('fmtDupBoxWrap');
+      const dupBox = document.getElementById('fmtDup');
+      const dupCount = document.getElementById('fmtDupCount');
+
+      const rawLines = ta.value.split(/\n/).map(l=>fmtNormalize(l)).filter(Boolean);
+      // نحافظ على أول جزء لو كان إيميل — التحقق هيكشّفه لو مش ID
+      const cleanedLines = rawLines.map(l => cleanWholeLine(l, { allowNonNumericFirst: true }));
+
+      // تكرار حسب ID وحسب السطر الكامل
+      const idSeen = {};
+      const lineSeen = {};
+      const duplicates = [];
+      const uniqueByEither = [];
+
+      // ملتقط ID من أول جزء فقط لأجل مفتاح التكرار الأول (وليس للتحقق النهائي)
+      function firstPartId(line){
+        const first = (line.split(':')[0]||'').trim();
+        return /^\d{12,16}$/.test(first) ? first : null;
+      }
+
+      cleanedLines.forEach(line=>{
+        const idFirst = firstPartId(line);
+        let dup = false;
+        if (idFirst) {
+          if (idSeen[idFirst]) { duplicates.push(line); dup = true; }
+          else idSeen[idFirst] = true;
+        }
+        if (lineSeen[line]) {
+          if (!dup) duplicates.push(line);
+          dup = true;
+        } else {
+          lineSeen[line] = true;
+        }
+        if (!dup) uniqueByEither.push(line);
+      });
+
+      if(duplicates.length){
+        dupBoxWrap.classList.add('show');
+        dupBox.value = duplicates.join('\n');
+        dupCount.textContent = duplicates.length;
+      } else {
+        dupBoxWrap.classList.remove('show');
+        dupBox.value = '';
+        dupCount.textContent = 0;
+      }
+
+      const oks = [], errs = [], validLines = [], validIds = [];
+
+      uniqueByEither.forEach(orig=>{
+        const parts = orig.split(':');
+        let expected = (fmt==='idpass')?2:(fmt==='idpass_cookies'||fmt==='idpass_auth')?3:4;
+        if(parts.length!==expected){ errs.push(orig+' → عدد الحقول غير صحيح (المتوقع '+expected+')'); return; }
+
+        // ID لازم يبدأ 61 وطوله 14
+        let id = sanitizeIdField(parts[0]);
+        // في صيَغ الكوكيز، لو c_user صالح نحترمه مكان أول جزء
+        if (fmt==='idpass_cookies' || fmt==='idpass_auth_cookies'){
+          const ckRaw = (fmt==='idpass_cookies') ? parts[2] : parts[3];
+          const cUid = extractCookieUidSafe(ckRaw);
+          if (cUid && reId14.test(cUid)) id = cUid;
+        }
+        if(!reId14.test(id)){ errs.push(orig+' → ID غير صالح (لازم يبدأ 61 وطوله 14)'); return; }
+
+        const pass = parts[1];
+        if(!pass){ errs.push(orig+' → PASS فارغ'); return; }
+
+        if(fmt==='idpass_auth'){
+          if(!fmtIsValidAuth(parts[2])){ errs.push(orig+' → AUTH غير صالح — 8 أجزاء × 4 رموز'); return; }
+        }
+        if(fmt==='idpass_cookies'){
+          const ck=fmtValidateCookies(parts[2]); if(!ck.ok){ errs.push(orig+' → '+ck.reason); return; }
+        }
+        if(fmt==='idpass_auth_cookies'){
+          if(!fmtIsValidAuth(parts[2])){ errs.push(orig+' → AUTH غير صالح'); return; }
+          const ck=fmtValidateCookies(parts[3]); if(!ck.ok){ errs.push(orig+' → '+ck.reason); return; }
+        }
+
+        const cleanOut = [id].concat(parts.slice(1).map(stripInvisible)).join(':');
+        validLines.push(cleanOut);
+        validIds.push(id);
+      });
+
+      // فحص الـIDs الصالحة عبر API
+      if (validIds.length > 0) {
+        const chunkSize = 1000;
+        const chunks = [];
+        for (let i = 0; i < validIds.length; i += chunkSize) chunks.push(validIds.slice(i, i + chunkSize));
+
+        const statusMap = {};
+        for (let i = 0; i < chunks.length; i++) {
+          btn.innerText = `جارِ المعالجة... ⏳ (دفعة ${i + 1} من ${chunks.length})`;
+          const res = await fetch('/.netlify/functions/proxyChecker', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ids: chunks[i] })
+          });
+          const json = await res.json();
+          const arr = Array.isArray(json?.data) ? json.data : [];
+          arr.forEach(acc => {
+            const uid = sanitizeIdField(acc.uid);
+            const msg = String(acc?.status?.message || '').toLowerCase();
+            const isActive = /active|ok|success/.test(msg);
+            if (uid) statusMap[uid] = isActive;
+          });
+        }
+
+        validLines.forEach(line => {
+          const id = line.split(':')[0];
+          if (id in statusMap) {
+            if (statusMap[id]) oks.push(line); else errs.push(line + ' → الحساب مقفول');
+          } else {
+            oks.push(line); // لا رد → اعتباره شغال
+          }
+        });
+      }
+
+      okTa.value = oks.join('\n');
+      errTa.value = errs.join('\n\n');
+      okCount.textContent = oks.length;
+      errCount.textContent = errs.length;
+
+      document.getElementById('fmtOkBoxWrap').classList.toggle('show', oks.length>0);
+      document.getElementById('fmtErrBoxWrap').classList.toggle('show', errs.length>0);
+
+      ta.value = '';
+      document.getElementById('fmtInputCount').innerText = 0;
+
+      revert();
+    }
+  </script>
+</body>
+</html>
